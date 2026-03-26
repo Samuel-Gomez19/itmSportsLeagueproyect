@@ -22,16 +22,14 @@ public class TeamController : ControllerBase
 
     private readonly IMapper _mapper;
 
-    private readonly ILogger<TeamController> _logger;
+    
 
 
     public TeamController(
 
     ITeamService teamService,
 
-    IMapper mapper,
-
-    ILogger<TeamController> logger)
+    IMapper mapper)
 
     {
 
@@ -39,7 +37,6 @@ public class TeamController : ControllerBase
 
         _mapper = mapper;
 
-        _logger = logger;
 
     }
 
