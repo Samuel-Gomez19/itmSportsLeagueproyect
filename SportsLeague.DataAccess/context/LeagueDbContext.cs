@@ -258,76 +258,7 @@ namespace SportsLeague.DataAccess.context
 
 
             });
-            // Sponsor Configuration
 
-            modelBuilder.Entity<Sponsor>(entity =>
-            {
-                entity.HasKey(s => s.Id);
-                entity.Property(s => s.Sponsorname)
-                .IsRequired()
-                .HasMaxLength(50);
-                entity.Property(s => s.ContactEmail)
-                .IsRequired()
-                .HasMaxLength(50);
-                entity.Property(s => s.Phone)
-                .HasMaxLength(20);
-                entity.Property(s => s.WebSiteURl)
-                .HasMaxLength(80);
-                entity.Property(s => s.Category)
-                .IsRequired()
-                .HasMaxLength(20);
-                entity.Property(s => s.CreatedAt)
-                .IsRequired();
-                entity.Property(s => s.UpdatedAt);
-<<<<<<< HEAD
-                //Creacion indice unico para evitar que se repitan nombres
-               entity.HasIndex(s => s.Sponsorname)
-                .IsUnique();
-=======
->>>>>>> 39f774f1e46e195bd30b18e50423e0857ab7b8d7
-
-
-
-
-
-
-            });
-            //TournamentSponsorConfiguration
-            modelBuilder.Entity<TournamentSponsor>(entity =>
-            {
-                entity.HasKey(ts => ts.Id);
-               
-                entity.Property(ts => ts.ContractAmount)
-                .IsRequired()
-                .HasMaxLength(80);
-                entity.Property(ts => ts.JoinedAt)
-                .IsRequired();
-               
-                // relacion con Sponsor
-                entity.HasOne(ts => ts.Sponsor)
-                      .WithMany(s => s.tournamentSponsors)
-                      .HasForeignKey(ts => ts.SponsorId)
-                      .OnDelete(DeleteBehavior.Cascade);
-                // relacion con Tournament
-                entity.HasOne(ts => ts.tournament)
-                      .WithMany(t => t.TournamentSponsor)
-                      .HasForeignKey(ts => ts.TournamentId)
-                      .OnDelete(DeleteBehavior.Cascade);
-<<<<<<< HEAD
-                
-=======
->>>>>>> 39f774f1e46e195bd30b18e50423e0857ab7b8d7
-
-
-
-
-
-
-
-
-
-
-            });
 
         }
     }
