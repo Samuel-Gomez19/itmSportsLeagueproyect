@@ -279,12 +279,11 @@ namespace SportsLeague.DataAccess.context
                 entity.Property(s => s.CreatedAt)
                 .IsRequired();
                 entity.Property(s => s.UpdatedAt);
-<<<<<<< HEAD
+
                 //Creacion indice unico para evitar que se repitan nombres
-               entity.HasIndex(s => s.Sponsorname)
-                .IsUnique();
-=======
->>>>>>> 39f774f1e46e195bd30b18e50423e0857ab7b8d7
+                entity.HasIndex(s => s.Sponsorname)
+                 .IsUnique();
+
 
 
 
@@ -296,13 +295,13 @@ namespace SportsLeague.DataAccess.context
             modelBuilder.Entity<TournamentSponsor>(entity =>
             {
                 entity.HasKey(ts => ts.Id);
-               
+
                 entity.Property(ts => ts.ContractAmount)
                 .IsRequired()
                 .HasMaxLength(80);
                 entity.Property(ts => ts.JoinedAt)
                 .IsRequired();
-               
+
                 // relacion con Sponsor
                 entity.HasOne(ts => ts.Sponsor)
                       .WithMany(s => s.tournamentSponsors)
@@ -313,10 +312,7 @@ namespace SportsLeague.DataAccess.context
                       .WithMany(t => t.TournamentSponsor)
                       .HasForeignKey(ts => ts.TournamentId)
                       .OnDelete(DeleteBehavior.Cascade);
-<<<<<<< HEAD
-                
-=======
->>>>>>> 39f774f1e46e195bd30b18e50423e0857ab7b8d7
+
 
 
 
@@ -334,5 +330,7 @@ namespace SportsLeague.DataAccess.context
 
 }
 
+
+      
     
 
