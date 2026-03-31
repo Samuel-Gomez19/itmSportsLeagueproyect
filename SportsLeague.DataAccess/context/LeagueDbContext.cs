@@ -279,7 +279,7 @@ namespace SportsLeague.DataAccess.context
                 entity.Property(s => s.CreatedAt)
                 .IsRequired();
                 entity.Property(s => s.UpdatedAt);
-                //Creacion indice unico para evitar que se repitan nombres un solo 
+                //Creacion indice unico para evitar que se repitan nombres
                entity.HasIndex(s => s.Sponsorname)
                 .IsUnique();
 
