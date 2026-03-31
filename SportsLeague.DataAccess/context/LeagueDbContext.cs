@@ -18,12 +18,16 @@ namespace SportsLeague.DataAccess.context
 
         public DbSet<Team> Teams => Set<Team>();
         public DbSet<Player> Players => Set<Player>();
-        public DbSet<Referee> Referees => Set<Referee>(); 
+        public DbSet<Referee> Referees => Set<Referee>();
 
-        public DbSet<Tournament> Tournaments => Set<Tournament>(); 
+        public DbSet<Tournament> Tournaments => Set<Tournament>();
 
         public DbSet<TournamentTeam> TournamentTeams => Set<TournamentTeam>();
+        //agregamos los nuevos dbsets
+        public DbSet<Sponsor> Sponsor => Set<Sponsor>();
+        
 
+        public DbSet<TournamentSponsor> TournamentSponsors => Set<TournamentSponsor>();
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -251,13 +255,72 @@ namespace SportsLeague.DataAccess.context
 
                 .IsUnique();
 
+
+
+            });
+            // Sponsor Configuration
+
+            modelBuilder.Entity<Sponsor>(entity =>
+            {
+                entity.HasKey(s => s.Id);
+                entity.Property(s => s.Sponsorname)
+                .IsRequired()
+                .HasMaxLength(50);
+                entity.Property(s => s.ContactEmail)
+                .IsRequired()
+                .HasMaxLength(50);
+                entity.Property(s => s.Phone)
+                .HasMaxLength(20);
+                entity.Property(s => s.WebSiteURl)
+                .HasMaxLength(80);
+                entity.Property(s => s.Category)
+                .IsRequired()
+                .HasMaxLength(20);
+                entity.Property(s => s.CreatedAt)
+                .IsRequired();
+                entity.Property(s => s.UpdatedAt);
+
+
+
+
+
+
+            });
+            //TournamentSponsorConfiguration
+            modelBuilder.Entity<TournamentSponsor>(entity =>
+            {
+                entity.HasKey(ts => ts.Id);
+               
+                entity.Property(ts => ts.ContractAmount)
+                .IsRequired()
+                .HasMaxLength(80);
+                entity.Property(ts => ts.JoinedAt)
+                .IsRequired();
+               
+                // relacion con Sponsor
+                entity.HasOne(ts => ts.Sponsor)
+                      .WithMany(s => s.tournamentSponsors)
+                      .HasForeignKey(ts => ts.SponsorId)
+                      .OnDelete(DeleteBehavior.Cascade);
+                // relacion con Tournament
+                entity.HasOne(ts => ts.tournament)
+                      .WithMany(t => t.TournamentSponsor)
+                      .HasForeignKey(ts => ts.TournamentId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+
+
+
+
+
+
+
+
+
             });
 
-
         }
-
     }
-
 
 }
 
