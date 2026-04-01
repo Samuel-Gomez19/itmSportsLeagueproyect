@@ -258,7 +258,7 @@ namespace SportsLeague.DataAccess.context
 
 
             });
-            // Sponsor Configuration
+
 
             modelBuilder.Entity<Sponsor>(entity =>
             {
@@ -324,6 +324,7 @@ namespace SportsLeague.DataAccess.context
 
 
             });
+
 
         }
     }
