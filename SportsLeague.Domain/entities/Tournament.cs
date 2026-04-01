@@ -20,7 +20,7 @@ namespace SportsLeague.Domain.entities
         // Navigation Properties
 
         public ICollection<TournamentTeam> TournamentTeams { get; set; } = new List<TournamentTeam>();
-        public ICollection<TournamentSponsor> TournamentSponsor { get; set; }= new List<TournamentSponsor>();
+        public ICollection<TournamentSponsor> TournamentSponsor { get; set; } = new List<TournamentSponsor>();
 
     }
 }
