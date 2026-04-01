@@ -263,7 +263,7 @@ namespace SportsLeague.DataAccess.context
             modelBuilder.Entity<Sponsor>(entity =>
             {
                 entity.HasKey(s => s.Id);
-                entity.Property(s => s.Sponsorname)
+                entity.Property(s => s.SponsorName)
                 .IsRequired()
                 .HasMaxLength(50);
                 entity.Property(s => s.ContactEmail)
@@ -281,7 +281,7 @@ namespace SportsLeague.DataAccess.context
                 entity.Property(s => s.UpdatedAt);
 
                 //Creacion indice unico para evitar que se repitan nombres
-                entity.HasIndex(s => s.Sponsorname)
+                entity.HasIndex(s => s.SponsorName)
                  .IsUnique();
 
 

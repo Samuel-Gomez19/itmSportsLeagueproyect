@@ -7,7 +7,7 @@ namespace SportsLeague.Domain.entities
 {
     public class Sponsor : AuditBase// creamos la clase sponsor
     {
-        public string Sponsorname { get; set; } = String.Empty;
+        public string SponsorName { get; set; } = String.Empty;
         public string ContactEmail { get; set; } = String.Empty;
         public string? Phone { get; set; } 
         public string? WebSiteURl { get; set; }
