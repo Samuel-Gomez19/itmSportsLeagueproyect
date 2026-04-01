@@ -12,7 +12,7 @@ namespace SportsLeague.Domain.entities
         public string? Phone { get; set; } 
         public string? WebSiteURl { get; set; }
         public SponsorCategory Category { get; set; } //hacemos el enlace con los enums de la categoria
-       
+
         public ICollection<TournamentSponsor> tournamentSponsors { get; set; } = new List<TournamentSponsor>();//agregamos las navegation properties adecuadas
     }
 }
