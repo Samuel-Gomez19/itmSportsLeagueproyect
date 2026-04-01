@@ -20,7 +20,10 @@ namespace SportsLeague.Domain.entities
         // Navigation Properties
 
         public ICollection<TournamentTeam> TournamentTeams { get; set; } = new List<TournamentTeam>();
+<<<<<<< HEAD
         public ICollection<TournamentSponsor> TournamentSponsor { get; set; } = new List<TournamentSponsor>();
+=======
+>>>>>>> parent of 61dfe6d (-add enum called "SponsorCategory")
 
     }
 }
