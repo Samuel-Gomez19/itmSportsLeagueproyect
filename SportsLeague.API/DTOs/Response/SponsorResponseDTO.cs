@@ -6,7 +6,7 @@ namespace SportsLeague.API.DTOs.Response
 {
     public class SponsorResponseDTO
     {
-       public int SponsorId {  get; set; }
+       public int Id {  get; set; }
         public string SponsorName { get; set; } = string.Empty;
         public string ContactEmail { get; set; } = string.Empty;
         public string? Phone { get; set; }
