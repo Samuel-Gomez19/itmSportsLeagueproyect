@@ -8,7 +8,7 @@ using SportsLeague.Domain.Interfaces.Services;
 
 namespace SportsLeague.Domain.Services
 {
-    public class SponsorService// Creame la clase
+    public class SponsorService: ISponsorService// Creame la clase y traemos la herencia del iservice 
     {
         private readonly ISponsorRepository _sponsorRepository;//genera el enlace con los crud propios del repositorio de service 
         private readonly ITournamentSponsorRepository _tournamentSponsorRepository;// hace el enlace con los crud de Tournament sponsor 
@@ -143,23 +143,23 @@ namespace SportsLeague.Domain.Services
 
 
         }
-        public async Task AddToTournamentAsync(int tournamentId, int sponsorId)
+        public async Task AddToTournamentAsync(int tournamentId, int sponsorId)//implementamos metodo para asociar sponsor a tournament
         {
 
-            var sponsor = await _sponsorRepository.GetByIdAsync(sponsorId);
+            var sponsor = await _sponsorRepository.GetByIdAsync(sponsorId);//valida que exista el sponsor
             if (sponsor == null)
-                throw new KeyNotFoundException($"No se encontro el sponsor con la ID {sponsorId}");
-            var tournament = await _tournamentRepository.GetByIdAsync(tournamentId);
+                throw new KeyNotFoundException($"No se encontro el sponsor con la ID {sponsorId}");//en caso que no da alerta 
+            var tournament = await _tournamentRepository.GetByIdAsync(tournamentId);//valida que exista el torneo
             if (tournament == null)
-                throw new KeyNotFoundException($"No se encontro el torneo con la ID {tournamentId}");
+                throw new KeyNotFoundException($"No se encontro el torneo con la ID {tournamentId}");//en caso que no da alerta 
             var existigr = await _tournamentSponsorRepository.GetByTournamentAndSponsor(tournamentId, sponsorId);
             if (existigr !=null)
-                throw new InvalidOperationException($"el Sponsor {sponsorId} ya esta asociado a un torneo{tournamentId}");
-            await _sponsorRepository.AddToTournamentAsync(tournamentId, sponsorId);
+                throw new InvalidOperationException($"el Sponsor {sponsorId} ya esta asociado a un torneo{tournamentId}");//si existe, advierte 
+            await _sponsorRepository.AddToTournamentAsync(tournamentId, sponsorId);//devuelve 
 
             
 
-            _logger.LogInformation("Sponsor {SponsorId} added to Tournament {TournamentId}", sponsorId, tournamentId);
+            _logger.LogInformation("Sponsor {SponsorId} added to Tournament {TournamentId}", sponsorId, tournamentId);//te entrega este mensaje
 
 
 
