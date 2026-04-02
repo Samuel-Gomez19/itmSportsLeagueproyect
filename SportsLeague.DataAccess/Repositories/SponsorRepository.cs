@@ -19,16 +19,7 @@ namespace SportsLeague.DataAccess.Repositories
 
         }
 
-        public async Task<Sponsor?> GetByIdWithTournamentAsync(int Id)//hacemos la relacion para busca con el id del torneo 
-        {
-            return await _dbSet
-                .Where(s => s.Id == Id)
-                .Include(s => s.tournamentSponsors)
-                        .ThenInclude(ts => ts.Sponsor)
-                .FirstOrDefaultAsync();
-
-
-        }
+        
         public async Task AddToTournamentAsync(int tournamentId, int sponsorId)
         {
             var tournamentSponsor = new TournamentSponsor
