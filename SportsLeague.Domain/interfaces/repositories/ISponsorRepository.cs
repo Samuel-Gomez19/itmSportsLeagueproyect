@@ -6,7 +6,7 @@ namespace SportsLeague.Domain.interfaces.repositories
     {
         Task<Sponsor?> ExistByNameAsync(string SponsorName);//para ver si es repetido el nombre del sponsor 
         
-        Task<Sponsor?> GetByIdWithTournamentAsync(int Id);
+        
         Task AddToTournamentAsync(int tournamentId, int sponsorId);
     }
 }
