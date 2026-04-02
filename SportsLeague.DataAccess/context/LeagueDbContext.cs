@@ -308,7 +308,7 @@ namespace SportsLeague.DataAccess.context
                       .HasForeignKey(ts => ts.SponsorId)
                       .OnDelete(DeleteBehavior.Cascade);
                 // relacion con Tournament
-                entity.HasOne(ts => ts.tournament)
+                entity.HasOne(ts => ts.Tournament)
                       .WithMany(t => t.TournamentSponsor)
                       .HasForeignKey(ts => ts.TournamentId)
                       .OnDelete(DeleteBehavior.Cascade);
