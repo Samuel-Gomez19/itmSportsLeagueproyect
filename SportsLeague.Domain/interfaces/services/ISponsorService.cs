@@ -1,4 +1,5 @@
 ﻿using SportsLeague.Domain.entities;
+using SportsLeague.Domain.enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ namespace SportsLeague.Domain.interfaces.services
         Task UpdateAsync(int id, Sponsor sponsor);
         Task DeleteAsync(int id);
 
-        Task UpdateCategoryAsync(int id, string category);//Permite subir de categoria de patrocinador
+        Task UpdateCategoryAsync(int id, SponsorCategory newCategory);//Permite subir de categoria de patrocinador
         Task AddToTournamentAsync(int tournamentId, int sponsorId);//permite asociar sponsor a torneo 
 
     }
