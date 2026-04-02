@@ -12,7 +12,7 @@ namespace SportsLeague.DataAccess.Repositories
         {
         }
 
-        public async Task<Sponsor?> ExistByNameAsync(string SponsorName)//Implementamos el metodo neduabre la busque
+        public async Task<Sponsor?> ExistByNameAsync(string SponsorName)//Implementamos el metodo que permite ver si hay otro sponsor llamado igual
         {
             return await _dbSet
                 .FirstOrDefaultAsync(s => s.SponsorName == SponsorName);//Con esta funcion conseguimos filtrar el primer resultado que nos coincida 
@@ -28,6 +28,16 @@ namespace SportsLeague.DataAccess.Repositories
                 .FirstOrDefaultAsync();
 
 
+        }
+        public async Task AddToTournamentAsync(int tournamentId, int sponsorId)
+        {
+            var tournamentSponsor = new TournamentSponsor
+            {
+                TournamentId = tournamentId,
+                SponsorId = sponsorId
+            };
+            await _context.TournamentSponsors.AddAsync(tournamentSponsor);
+            await _context.SaveChangesAsync();
         }
     }
 }
