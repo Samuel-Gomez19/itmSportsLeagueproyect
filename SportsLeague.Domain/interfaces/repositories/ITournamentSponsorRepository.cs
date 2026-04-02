@@ -9,7 +9,7 @@ namespace SportsLeague.Domain.interfaces.repositories
     {
         Task<TournamentSponsor?> GetByTournamentAndSponsor(int TournamentId, int SponsorId);
 
-        Task<IEnumerable<TournamentSponsor>> GetBySponsorAsync(int SponsorId);// para buscar segun el id del sponsor 
+       
 
     }
 }
