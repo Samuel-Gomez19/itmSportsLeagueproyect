@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SportsLeague.Domain.interfaces.repositories
+namespace SportsLeague.Domain.interfaces.Repositories
 {
     public interface ITournamentRepository : IGenericRepository<Tournament>
 

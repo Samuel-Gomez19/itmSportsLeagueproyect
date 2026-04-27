@@ -1,6 +1,6 @@
 ﻿using SportsLeague.Domain.entities;
 
-namespace SportsLeague.Domain.interfaces.repositories
+namespace SportsLeague.Domain.interfaces.Repositories
 { 
     public interface ISponsorRepository : IGenericRepository<Sponsor>// creo el IRepository donde hereda los metodos del generic 
     {
