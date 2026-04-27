@@ -1,10 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using SportsLeague.Domain.entities;
-using SportsLeague.Domain.interfaces.repositories.SportsLeague.Domain.Interfaces.Repositories;
+using SportsLeague.Domain.interfaces.Repositories;
+using SportsLeague.Domain.interfaces.Repositories.SportsLeague.Domain.Interfaces.Repositories;
 using SportsLeague.Domain.Interfaces.Services;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SportsLeague.Domain.Services;
 

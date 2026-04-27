@@ -4,12 +4,13 @@ using System.Text;
 
 namespace SportsLeague.Domain.enums
 {
-    public enum SponsorCategory
+    public enum CardType
+
     {
-        Main = 0,
-        second= 1,
-        third= 2,
-        fourth= 3,
+
+        Yellow = 0,
+
+        Red = 1
 
     }
 }

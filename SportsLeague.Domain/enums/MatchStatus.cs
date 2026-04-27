@@ -4,12 +4,17 @@ using System.Text;
 
 namespace SportsLeague.Domain.enums
 {
-    public enum SponsorCategory
+    public enum MatchStatus
+
     {
-        Main = 0,
-        second= 1,
-        third= 2,
-        fourth= 3,
+
+        Scheduled = 0,
+
+        InProgress = 1,
+
+        Finished = 2,
+
+        Suspended = 3
 
     }
 }

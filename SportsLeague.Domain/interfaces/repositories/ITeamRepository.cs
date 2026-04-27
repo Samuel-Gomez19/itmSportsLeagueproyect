@@ -1,6 +1,6 @@
 ﻿using SportsLeague.Domain.entities;
 
-namespace SportsLeague.Domain.interfaces.repositories
+namespace SportsLeague.Domain.interfaces.Repositories
 {
     public interface ITeamRepository : IGenericRepository<Team>
 

@@ -4,12 +4,15 @@ using System.Text;
 
 namespace SportsLeague.Domain.enums
 {
-    public enum SponsorCategory
+    public enum GoalType
+
     {
-        Main = 0,
-        second= 1,
-        third= 2,
-        fourth= 3,
+
+        Normal = 0,
+
+        Penalty = 1,
+
+        OwnGoal = 2
 
     }
 }

@@ -4,8 +4,8 @@ using SportsLeague.DataAccess.context;
 
 using SportsLeague.DataAccess.Repositories;
 
-using SportsLeague.Domain.interfaces.repositories;
-using SportsLeague.Domain.interfaces.repositories.SportsLeague.Domain.Interfaces.Repositories;
+using SportsLeague.Domain.interfaces.Repositories;
+using SportsLeague.Domain.interfaces.Repositories.SportsLeague.Domain.Interfaces.Repositories;
 using SportsLeague.Domain.interfaces.services;
 using SportsLeague.Domain.Interfaces.Repositories;
 using SportsLeague.Domain.Interfaces.Services;
@@ -38,6 +38,8 @@ builder.Services.AddScoped<ITournamentTeamRepository, TournamentTeamRepository>(
 builder.Services.AddScoped <ISponsorRepository, SponsorRepository>();//Nuevo
 builder.Services.AddScoped <ITournamentSponsorRepository, TournamentSponsorRepository>();//nuevo
 
+builder.Services.AddScoped<IMatchRepository, MatchRepository>();
+
 // ── Services ──
 
 builder.Services.AddScoped<ITeamService, TeamService>();
@@ -47,6 +49,12 @@ builder.Services.AddScoped<IRefereeService, RefereeService>(); // NUEVO
 
 builder.Services.AddScoped<ITournamentService, TournamentService>(); // NUEVO
 builder.Services.AddScoped<ISponsorService, SponsorService>();//nuevo
+
+
+
+
+builder.Services.AddScoped<IMatchService, MatchService>();
+
 
 
 // ── AutoMapper ──
