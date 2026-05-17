@@ -3,9 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using SportsLeague.DataAccess.context;
 
 using SportsLeague.DataAccess.Repositories;
-
-using SportsLeague.Domain.interfaces.repositories;
-using SportsLeague.Domain.interfaces.repositories.SportsLeague.Domain.Interfaces.Repositories;
+using SportsLeague.Domain.interfaces.Repositories;
+using SportsLeague.Domain.interfaces.Repositories.SportsLeague.Domain.Interfaces.Repositories;
 using SportsLeague.Domain.interfaces.services;
 using SportsLeague.Domain.Interfaces.Repositories;
 using SportsLeague.Domain.Interfaces.Services;
