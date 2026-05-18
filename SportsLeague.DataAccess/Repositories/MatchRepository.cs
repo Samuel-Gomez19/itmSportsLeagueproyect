@@ -81,6 +81,7 @@ namespace SportsLeague.DataAccess.Repositories
 
             .Where(m => m.TournamentId == tournamentId)
             
+            
             .Include(m => m.Tournament)
 
             .Include(m => m.HomeTeam)
