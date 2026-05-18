@@ -80,6 +80,8 @@ namespace SportsLeague.DataAccess.Repositories
             return await _dbSet
 
             .Where(m => m.TournamentId == tournamentId)
+            
+            .Include(m => m.Tournament)
 
             .Include(m => m.HomeTeam)
 
