@@ -46,6 +46,7 @@ builder.Services.AddScoped<IRefereeService, RefereeService>(); // NUEVO
 
 builder.Services.AddScoped<ITournamentService, TournamentService>(); // NUEVO
 builder.Services.AddScoped<ISponsorService, SponsorService>();//nuevo
+builder.Services.AddScoped<IStandingsService, StandingsService>();
 
 
 // ── AutoMapper ──
