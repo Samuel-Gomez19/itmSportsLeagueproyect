@@ -1,4 +1,5 @@
-﻿using SportsLeague.Domain.enums;
+﻿using SportsLeague.Domain.Entities;
+using SportsLeague.Domain.enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -41,6 +42,8 @@ namespace SportsLeague.Domain.entities
         public ICollection<Goal> Goals { get; set; } = new List<Goal>();
 
         public ICollection<Card> Cards { get; set; } = new List<Card>();
+
+        public ICollection<MatchLineup> MatchLinesup { get; set; } = new List<MatchLineup>();
 
     }
 }
