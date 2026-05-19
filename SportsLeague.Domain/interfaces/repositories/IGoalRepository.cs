@@ -1,10 +1,7 @@
 ﻿using SportsLeague.Domain.entities;
-using SportsLeague.Domain.interfaces.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using SportsLeague.Domain.Interfaces.Repositories;
 
-namespace SportsLeague.Domain.interfaces.repositories
+namespace SportsLeague.Domain.Interfaces.Repositories
 {
     public interface IGoalRepository : IGenericRepository<Goal>
 

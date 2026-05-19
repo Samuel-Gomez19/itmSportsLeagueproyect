@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SportsLeague.DataAccess.context;
 using SportsLeague.Domain.entities;
-using SportsLeague.Domain.interfaces.Repositories;
+using SportsLeague.Domain.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Text;

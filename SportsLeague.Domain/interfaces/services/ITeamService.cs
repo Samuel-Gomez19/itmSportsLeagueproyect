@@ -1,6 +1,6 @@
 ﻿using SportsLeague.Domain.entities;
 
-namespace SportsLeague.Domain.interfaces.services
+namespace SportsLeague.Domain.Interfaces.Services
 {
     public interface ITeamService
 

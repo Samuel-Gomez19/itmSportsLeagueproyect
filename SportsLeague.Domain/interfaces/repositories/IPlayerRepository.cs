@@ -1,5 +1,5 @@
 ﻿using SportsLeague.Domain.entities;
-using SportsLeague.Domain.interfaces.Repositories;
+using SportsLeague.Domain.Interfaces.Repositories;
 
 
 namespace SportsLeague.Domain.Interfaces.Repositories;

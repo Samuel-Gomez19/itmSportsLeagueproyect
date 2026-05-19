@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SportsLeague.Domain.interfaces.services
+namespace SportsLeague.Domain.Interfaces.Services
 {
 
 

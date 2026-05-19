@@ -1,6 +1,6 @@
 ﻿using SportsLeague.Domain.entities;
 
-namespace SportsLeague.Domain.interfaces.Repositories
+namespace SportsLeague.Domain.Interfaces.Repositories
 {
     public interface IGenericRepository<T> where T : AuditBase
 

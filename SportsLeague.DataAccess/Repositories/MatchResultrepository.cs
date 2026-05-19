@@ -1,6 +1,6 @@
 ﻿using SportsLeague.DataAccess.context;
 using SportsLeague.Domain.entities;
-using SportsLeague.Domain.interfaces.repositories;
+using SportsLeague.Domain.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

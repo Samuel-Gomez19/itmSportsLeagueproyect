@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SportsLeague.Domain.interfaces.Repositories
+namespace SportsLeague.Domain.Interfaces.Repositories
 {
     public interface ITournamentSponsorRepository: IGenericRepository<TournamentSponsor>// creo el Irepository donde hereda los metodos del generic
     {

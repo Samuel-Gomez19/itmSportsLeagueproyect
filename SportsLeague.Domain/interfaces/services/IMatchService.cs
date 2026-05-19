@@ -3,7 +3,7 @@ using SportsLeague.Domain.enums;
 
 
 
-namespace SportsLeague.Domain.interfaces.services
+namespace SportsLeague.Domain.Interfaces.Services
 {
     public interface IMatchService
 

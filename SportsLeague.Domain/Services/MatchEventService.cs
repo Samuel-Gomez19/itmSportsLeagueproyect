@@ -2,9 +2,9 @@
 using SportsLeague.Domain.entities;
 using SportsLeague.Domain.enums;
 using SportsLeague.Domain.Helpers;
-using SportsLeague.Domain.interfaces.repositories;
-using SportsLeague.Domain.interfaces.Repositories;
-using SportsLeague.Domain.interfaces.services;
+using SportsLeague.Domain.Interfaces.Repositories;
+using SportsLeague.Domain.Interfaces.Repositories;
+using SportsLeague.Domain.Interfaces.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;

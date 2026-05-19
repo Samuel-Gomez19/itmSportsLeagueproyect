@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SportsLeague.DataAccess.context;
 using SportsLeague.Domain.entities;
-using SportsLeague.Domain.interfaces.Repositories;
+using SportsLeague.Domain.Interfaces.Repositories;
 
 namespace SportsLeague.DataAccess.Repositories
 {
@@ -80,9 +80,6 @@ namespace SportsLeague.DataAccess.Repositories
             return await _dbSet
 
             .Where(m => m.TournamentId == tournamentId)
-            
-            
-            .Include(m => m.Tournament)
 
             .Include(m => m.HomeTeam)
 

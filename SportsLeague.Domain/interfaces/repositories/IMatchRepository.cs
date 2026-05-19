@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using SportsLeague.Domain.entities;
 
-namespace SportsLeague.Domain.interfaces.Repositories
+namespace SportsLeague.Domain.Interfaces.Repositories
 {
     public interface IMatchRepository : IGenericRepository<Match>
 

@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SportsLeague.Domain.interfaces.services;
+using SportsLeague.Domain.Interfaces.Services;
 
 namespace SportsLeague.API.Controllers
 {

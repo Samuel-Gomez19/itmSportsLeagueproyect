@@ -2,7 +2,7 @@
 using SportsLeague.DataAccess.context;
 using SportsLeague.Domain.entities;
 using SportsLeague.Domain.enums;
-using SportsLeague.Domain.interfaces.Repositories;
+using SportsLeague.Domain.Interfaces.Repositories;
 namespace SportsLeague.DataAccess.Repositories
 {
     public class TournamentSponsorRepository : GenericRepository<TournamentSponsor>, ITournamentSponsorRepository//Implementamos el repository con los metodos del generic y del ITournamentSponsor

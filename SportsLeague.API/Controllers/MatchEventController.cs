@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using SportsLeague.API.DTOs.Request;
 using SportsLeague.API.DTOs.Response;
 using SportsLeague.Domain.entities;
-using SportsLeague.Domain.interfaces.services;
+using SportsLeague.Domain.Interfaces.Services;
 
 namespace SportsLeague.API.Controllers
 {

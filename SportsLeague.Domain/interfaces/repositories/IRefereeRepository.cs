@@ -1,12 +1,11 @@
 ﻿using SportsLeague.Domain.entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using SportsLeague.Domain.Interfaces.Repositories;
 
-namespace SportsLeague.Domain.interfaces.Repositories
+namespace SportsLeague.Domain.Interfaces.Repositories
+
 {
-    namespace SportsLeague.Domain.Interfaces.Repositories
-    {
+    
+    
 
         public interface IRefereeRepository : IGenericRepository<Referee>
 
@@ -15,5 +14,5 @@ namespace SportsLeague.Domain.interfaces.Repositories
             Task<IEnumerable<Referee>> GetByNationalityAsync(string nationality);
 
         }
-    }
+    
 }

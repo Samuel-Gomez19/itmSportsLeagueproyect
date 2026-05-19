@@ -1,14 +1,12 @@
 ﻿using Microsoft.Extensions.Logging;
 using SportsLeague.Domain.entities;
 using SportsLeague.Domain.enums;
-using SportsLeague.Domain.interfaces.Repositories;
-using SportsLeague.Domain.interfaces.services;
 using SportsLeague.Domain.Interfaces.Repositories;
 using SportsLeague.Domain.Interfaces.Services;
 
 namespace SportsLeague.Domain.Services
 {
-    public class SponsorService: ISponsorService// Creame la clase y traemos la herencia del iservice 
+    public class SponsorService : ISponsorService// Creame la clase y traemos la herencia del iservice 
     {
         private readonly ISponsorRepository _sponsorRepository;//genera el enlace con los crud propios del repositorio de service 
         private readonly ITournamentSponsorRepository _tournamentSponsorRepository;// hace el enlace con los crud de Tournament sponsor 
@@ -136,7 +134,7 @@ namespace SportsLeague.Domain.Services
 
             _logger.LogInformation($"deleting sponsor with the ID: {id}");
             await _sponsorRepository.DeleteAsync(id);//en caso que exista, retornamos 
-            
+
 
 
 
@@ -153,11 +151,11 @@ namespace SportsLeague.Domain.Services
             if (tournament == null)
                 throw new KeyNotFoundException($"No se encontro el torneo con la ID {tournamentId}");//en caso que no da alerta 
             var existigr = await _tournamentSponsorRepository.GetByTournamentAndSponsor(tournamentId, sponsorId);
-            if (existigr !=null)
+            if (existigr != null)
                 throw new InvalidOperationException($"el Sponsor {sponsorId} ya esta asociado a un torneo{tournamentId}");//si existe, advierte 
             await _sponsorRepository.AddToTournamentAsync(tournamentId, sponsorId);//devuelve 
 
-            
+
 
             _logger.LogInformation("Sponsor {SponsorId} added to Tournament {TournamentId}", sponsorId, tournamentId);//te entrega este mensaje
 
@@ -166,10 +164,10 @@ namespace SportsLeague.Domain.Services
 
 
         }
-        
 
-        
-        
+
+
+
     }
 
 
@@ -177,9 +175,9 @@ namespace SportsLeague.Domain.Services
 
 
 }
-        
 
 
-       
-   
+
+
+
 
