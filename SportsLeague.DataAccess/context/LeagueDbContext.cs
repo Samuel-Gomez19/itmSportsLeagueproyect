@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SportsLeague.Domain.entities;
+using SportsLeague.Domain.Entities;
 
 namespace SportsLeague.DataAccess.context
 {
@@ -34,6 +35,7 @@ namespace SportsLeague.DataAccess.context
         public DbSet<Goal> Goals => Set<Goal>();
 
         public DbSet<Card> Cards => Set<Card>();
+        public DbSet <MatchLineup> MatchLineups => Set<MatchLineup>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
 
@@ -517,7 +519,71 @@ namespace SportsLeague.DataAccess.context
                 });
 
             });
+            //MatchLineup Configuration
 
+            modelBuilder.Entity<MatchLineup>(entity =>
+            {
+                entity.HasKey(ml => ml.Id);
+                entity.Property(ml => ml.IsStarter).IsRequired();
+                entity.Property (ml => ml.PlayerPosition).IsRequired();
+                entity.Property(m => m.CreatedAt).IsRequired();
+                entity.Property(m => m.UpdatedAt).IsRequired(false);
+                //relacion con match
+                entity.HasOne(ml => ml.Match)
+                      .WithOne(m => m.MatchLineup)
+                      .HasForeignKey<MatchLineup>(ml => ml.MatchId)//la diferencia con la relacion hacia player,
+                                                                   //es que un jugador puede participar de muchas alineaciones,
+                                                                   //pero durante un partido siempre hay una alineacion inicial
+                      .OnDelete(DeleteBehavior.Cascade);
+                //relacion con player
+                entity.HasOne(ml => ml.Player)
+                .WithMany(p => p.MatchLinesup)
+                .HasForeignKey(ml => ml.PlayerId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+                //indice unico compuesto para evitar que se ingresen valores ya existente
+
+                entity.HasIndex(ml => new { ml.MatchId, ml.PlayerId }).IsUnique();
+
+
+                
+                      
+                      
+                
+                      
+               
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            });
+
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
 
         }
     }
