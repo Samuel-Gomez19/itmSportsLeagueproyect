@@ -1,7 +1,7 @@
 ﻿using SportsLeague.Domain.entities;
 using SportsLeague.Domain.enums;
 using SportsLeague.Domain.Interfaces.Repositories;
-using SportsLeague.Domain.Interfaces.Repositories;
+
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -111,6 +111,25 @@ namespace SportsLeague.Domain.Helpers
                     "El minuto debe estar entre 1 y 120");
 
         }
+        //agregamos nueva validacionm para confirmar si el equipo existe y que permite agregar alineaciones a partidos programados
+
+        public async Task <Match> ValidateMatchForLineupAsync(int matchId)
+        {
+            var match = await _matchRepository.GetByIdAsync(matchId);
+            if (match == null)
+                throw new KeyNotFoundException($"No se encontro el partido con la id {matchId}");
+
+            if (match.Status != MatchStatus.Scheduled)
+                throw new KeyNotFoundException($"Solo se pueden registrar partidos programados");
+
+            return match;
+
+
+
+
+        }
+        
+
 
     }
 }
