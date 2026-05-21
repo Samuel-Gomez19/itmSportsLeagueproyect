@@ -120,7 +120,7 @@ namespace SportsLeague.Domain.Helpers
                 throw new KeyNotFoundException($"No se encontro el partido con la id {matchId}");
 
             if (match.Status != MatchStatus.Scheduled)
-                throw new KeyNotFoundException($"Solo se pueden registrar partidos programados");
+                throw new InvalidOperationException($"Solo se pueden registrar partidos programados");
 
             return match;
 
