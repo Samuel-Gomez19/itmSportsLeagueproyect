@@ -31,7 +31,7 @@ namespace SportsLeague.DataAccess.Repositories
             
         }
 
-        public async Task<IEnumerable<MatchLineup>> GetByMatchAsync(int MatchId)
+        public async Task<IEnumerable<MatchLineup>> GetByMatchAsync(int MatchId)//buscamo por partido
         {
             return await _dbSet
 
