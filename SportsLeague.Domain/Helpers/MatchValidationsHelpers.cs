@@ -115,14 +115,14 @@ namespace SportsLeague.Domain.Helpers
 
         public async Task <Match> ValidateMatchForLineupAsync(int matchId)
         {
-            var match = await _matchRepository.GetByIdAsync(matchId);
-            if (match == null)
+            var match = await _matchRepository.GetByIdAsync(matchId);//buscamos por la id del partido
+            if (match == null)// en caso de ser nulo, muestra mensaje de not found
                 throw new KeyNotFoundException($"No se encontro el partido con la id {matchId}");
 
-            if (match.Status != MatchStatus.Scheduled)
+            if (match.Status != MatchStatus.Scheduled)// si no esta en agendando saca mensaje de error
                 throw new InvalidOperationException($"Solo se pueden registrar partidos programados");
 
-            return match;
+            return match;//de cumplir, permite la creacion
 
 
 
