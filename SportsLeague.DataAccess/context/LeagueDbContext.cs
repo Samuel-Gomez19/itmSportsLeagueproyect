@@ -5,7 +5,7 @@ using SportsLeague.Domain.Entities;
 namespace SportsLeague.DataAccess.context
 {
     public class LeagueDbContext : DbContext
-
+        
     {
 
         public LeagueDbContext(DbContextOptions<LeagueDbContext> options)
