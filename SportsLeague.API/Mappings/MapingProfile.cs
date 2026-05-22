@@ -109,9 +109,9 @@ namespace SportsLeague.API.Mappings
 
             CreateMap<CreateMatchLineupDTO, MatchLineup>();
             CreateMap<MatchLineup, MatchLineupDTO>()
-                .ForMember(dest => dest.PlayerName,
-                opt => opt.MapFrom(src => src.Player.FirstName + " " + src.Player.LastName))
-                .ForMember(dest => dest.TeamName, opt => opt.MapFrom(src => src.Player.Team.Name));
+                .ForMember(dest => dest.PlayerName, opt => opt.MapFrom(src => src.Player.FirstName))
+                .ForMember(dest => dest.TeamName, opt => opt.MapFrom(src => src.Player.Team.Name))
+                .ForMember(dest => dest.Position, opt => opt.MapFrom(src => src.PlayerPosition));
 
 
 
