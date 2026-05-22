@@ -24,8 +24,9 @@ namespace SportsLeague.DataAccess.Repositories
         public async Task<IEnumerable<MatchLineup>> GetByMatchAndTeamAsync(int MatchId, int TeamId)//buscamos tanto pot el partido como por el torneo si jugador esta asociado
         {
             return await _dbSet
-                 .Include(ml => ml.PlayerId)
-                 .Include(ml => ml.MatchId)
+                 .Include(ml => ml.Player)
+                 .ThenInclude(p => p.Team)//incluyo la clave foranea para el equipo
+                 .Include(ml => ml.Match)
                  .Where(ml => ml.MatchId == MatchId && ml.Player.TeamId == TeamId)
                  .ToListAsync();
             
@@ -34,9 +35,9 @@ namespace SportsLeague.DataAccess.Repositories
         public async Task<IEnumerable<MatchLineup>> GetByMatchAsync(int MatchId)//buscamo por partido
         {
             return await _dbSet
-
-                  .Include(ml => ml.MatchId)
-                  .Include(ml => ml.PlayerId)
+                  .Include(ml => ml.Player)
+                  .ThenInclude(p => p.Team)//incluyo la clave foranea para pero tomando en cuenta el jugador, patra que se incluya el nombre del equipo
+                  .Include(ml => ml.Match)  
                   .Where(ml => ml.MatchId == MatchId)
                   .ToListAsync();
 
