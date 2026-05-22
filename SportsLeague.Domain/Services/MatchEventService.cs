@@ -3,7 +3,7 @@ using SportsLeague.Domain.entities;
 using SportsLeague.Domain.enums;
 using SportsLeague.Domain.Helpers;
 using SportsLeague.Domain.Interfaces.Repositories;
-using SportsLeague.Domain.Interfaces.Repositories;
+
 using SportsLeague.Domain.Interfaces.Services;
 using System;
 using System.Collections.Generic;
