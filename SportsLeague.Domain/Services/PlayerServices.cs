@@ -2,8 +2,7 @@
 using SportsLeague.Domain.entities;
 using SportsLeague.Domain.Interfaces.Repositories;
 using SportsLeague.Domain.Interfaces.Services;
-using SportsLeague.Domain.Interfaces.Repositories;
-using SportsLeague.Domain.Interfaces.Services;
+
 
 
 namespace SportsLeague.Domain.Services;

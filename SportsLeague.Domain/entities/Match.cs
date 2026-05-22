@@ -43,7 +43,7 @@ namespace SportsLeague.Domain.entities
 
         public ICollection<Card> Cards { get; set; } = new List<Card>();
 
-        public MatchLineup? MatchLineup { get; set; } 
+        public ICollection<MatchLineup> MatchLineup { get; set; } = new List<MatchLineup>();
 
     }
 }

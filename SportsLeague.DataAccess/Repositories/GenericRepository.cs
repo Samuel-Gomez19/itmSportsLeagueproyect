@@ -4,6 +4,7 @@ using SportsLeague.Domain.entities;
 using SportsLeague.Domain.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace SportsLeague.DataAccess.Repositories
@@ -18,6 +19,7 @@ namespace SportsLeague.DataAccess.Repositories
 
 
         public GenericRepository(LeagueDbContext context)
+        
 
         {
 
@@ -26,6 +28,10 @@ namespace SportsLeague.DataAccess.Repositories
             _dbSet = context.Set<T>();
 
         }
+        
+        
+
+
 
 
         public async Task<IEnumerable<T>> GetAllAsync()

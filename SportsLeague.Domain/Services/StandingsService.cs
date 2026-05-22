@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
 using SportsLeague.Domain.Interfaces.Repositories;
-using SportsLeague.Domain.Interfaces.Repositories;
 using SportsLeague.Domain.Interfaces.Services;
 using SportsLeague.Domain.entities;
 using SportsLeague.Domain.enums;

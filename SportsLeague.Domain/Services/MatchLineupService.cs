@@ -71,7 +71,8 @@ namespace SportsLeague.Domain.Services
             var OnMatch = LineupMatch.Any(l => l.Id == lineupId);//con el linq any, buscamos asi sea una alineacion que concuerde con ese partido
             if (!OnMatch)//de no ser asi, muestra error
                 throw new KeyNotFoundException($"La alineacion con la id {lineupId} no pertenece al partido {matchId}");
-            _logger.LogInformation("Eliminando la alineacion {lineupId} del partido {matchId}", lineupId, matchId);
+            
+            _logger.LogInformation($"Eliminando la alineacion {lineupId} del partido {matchId}", lineupId, matchId);
 
             await _MatchLineupRepository.DeleteAsync(lineupId);//si pasa el flujo deja crear
         }

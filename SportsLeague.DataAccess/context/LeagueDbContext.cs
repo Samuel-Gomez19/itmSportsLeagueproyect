@@ -530,11 +530,11 @@ namespace SportsLeague.DataAccess.context
                 entity.Property(m => m.UpdatedAt).IsRequired(false);
                 //relacion con match
                 entity.HasOne(ml => ml.Match)
-                      .WithOne(m => m.MatchLineup)
-                      .HasForeignKey<MatchLineup>(ml => ml.MatchId)//la diferencia con la relacion hacia player,
+                      .WithMany(m => m.MatchLineup)
+                      .HasForeignKey(ml => ml.MatchId)//la diferencia con la relacion hacia player,
                                                                    //es que un jugador puede participar de muchas alineaciones,
-                                                                   //pero durante un partido siempre hay una alineacion inicial
-                      .OnDelete(DeleteBehavior.Cascade);
+                                                                 //pero durante un partido siempre hay una alineacion inicial
+                .OnDelete(DeleteBehavior.Cascade);
                 //relacion con player
                 entity.HasOne(ml => ml.Player)
                 .WithMany(p => p.MatchLinesup)
