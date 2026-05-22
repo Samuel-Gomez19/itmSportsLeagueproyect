@@ -76,40 +76,43 @@ var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
 
-{
 
-    var context = scope.ServiceProvider
+    
+    {
 
-        .GetRequiredService<LeagueDbContext>();
+        var context = scope.ServiceProvider
+
+            .GetRequiredService<LeagueDbContext>();
 
 
 
-    await context.Database.MigrateAsync(); // Crea la BD + aplica migraciones 
+        await context.Database.MigrateAsync(); // Crea la BD + aplica migraciones 
 
-    await DataSeeder.SeedAsync(context);
-}
-
+        await DataSeeder.SeedAsync(context);
+    }
     // ── Middleware Pipeline ──
 
     if (app.Environment.IsDevelopment())
 
-{
+    {
 
-    app.UseSwagger();
+        app.UseSwagger();
 
-    app.UseSwaggerUI();
+        app.UseSwaggerUI();
 
-}
-
-
-app.MapGet("/", () => Results.Redirect("/swagger"));
+    }
 
 
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
+    app.MapGet("/", () => Results.Redirect("/swagger"));
 
 
-app.Run();
+    app.UseHttpsRedirection();
+
+    app.UseAuthorization();
+
+    app.MapControllers();
+
+
+    app.Run();
+
+ 
